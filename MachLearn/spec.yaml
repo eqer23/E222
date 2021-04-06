@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  version: 0.0-oas3
+  title: Heart Faliure Prediction
+  description: >-
+          A way to input some data in order to see whether someone will have 
+          a heart attack or not.
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: Isaac Navarrete
+  license: 
+    name: Drivers License
+paths:
+  /upload/<filename>: 
+    post: 
+      tags:
+        - Upload
+      summary: Upload a file
+      operationId: my_python_dir.file.upload
+      parameters:
+        - name: filename
+          in: query
+          description: upload a file with data. 
+          required: true #won't run unless i have <filename>
+          schema:
+            type: string 
+      responses:
+        '405':
+          description: 'Invalid Input'
+      requestBody:
+        content:
+          mulitport/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+  /predict/{id}:
+    get:
+      tags:
+        - Prediction
+      operationId: my_python_dir.prediction.my_prediction
+      description: Predicts with uploaded file
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: array
+            items:
+              type: number
+            minItems: 1
+          style: simple
+          explode: true
+        - in: query
+          name: metadata
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: 'Successful'
+servers:
+  - url: 'http://localhost:8080' 
