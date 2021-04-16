@@ -1,0 +1,32 @@
+##this is where i will make a prediciton using my pkl file
+from sklearn import datasets
+from joblib import load
+import numpy as np
+import json
+
+#load the model
+
+my_model = load("heartfailure.pkl")
+iris_data = datasets.load_iris()
+class_names = iris_data.target_names
+
+#endpoint points here
+def my_prediction():
+    arr = np.array (75,0,582,0,20,1,26500,1.9,130,1,0,4)
+    arr = arr.reshape(-1,1)
+   # dummy = np.array(id)
+   # dummyT = dummy.reshape(1,-1)
+   # r = dummy.shape
+   # t = dummyT.shape
+   # r_str = json.dumps(r)
+   # t_str = json.dumps(t)
+    prediction = my_model.predict(arr)
+   # name = class_names[prediction]
+   # name = name.tolist()
+   # name_str = json.dumps(name)
+   # string = [t_str, r_str, name_str]
+    return prediction
+
+
+
+
