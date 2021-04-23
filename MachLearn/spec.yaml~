@@ -11,7 +11,7 @@ info:
   license: 
     name: Drivers License
 paths:
-  /upload/<filename>: 
+  /packages/upload/<filename>: 
     post: 
       tags:
         - Upload
@@ -21,7 +21,7 @@ paths:
         - name: filename
           in: query
           description: upload a file with data. 
-          required: true #won't run unless i have <filename>
+          required: true 
           schema:
             type: string 
       responses:
@@ -60,5 +60,5 @@ paths:
       responses:
         '200':
           description: 'Successful'
-          servers:
-          - url: 'http://localhost:8080' 
+  #servers:
+  #        - url: 'http://localhost:8080' 
