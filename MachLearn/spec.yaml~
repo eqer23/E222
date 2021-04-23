@@ -11,7 +11,7 @@ info:
   license: 
     name: Drivers License
 paths:
-  /packages/upload/<filename>: 
+  upload/<filename>: 
     post: 
       tags:
         - Upload
