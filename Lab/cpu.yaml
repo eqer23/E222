@@ -12,9 +12,9 @@ host: "localhost:8080"
 basePath: "/engr-222"
 schemes: 
   - "http"
-consumes: 
-  - "application/json"
-produces: 
+consumes: #input 
+  - "application/json" #the type of language the webiste will be
+produces: #output
   - "application/json"
 paths: 
   /cpu:

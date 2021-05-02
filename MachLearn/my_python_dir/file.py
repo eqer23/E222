@@ -7,7 +7,6 @@ from flask import send_file
 UPLOAD_FOLDER='.'
 
 
-#upload to the flask 
 def upload(filename):
     f = request.files['file']
     f.save(filename)

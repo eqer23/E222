@@ -24,6 +24,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CPU'
+
+  /os:
+    get:
+      tags:
+        - OS
+      operationId: os_pack.cpu_2020.get_os
+      description: Returns cpu information of the hosting server
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPU'
+  /hi/<arg1>/<arg2>:
+    get:
+      tags:
+        - HI
+      operationId: hello.hello
+      description: Returns cpu information of the hosting server
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPU'
 servers:
   - url: 'http://localhost:8080/engr-222'
 components:

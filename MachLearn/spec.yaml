@@ -60,5 +60,3 @@ paths:
       responses:
         '200':
           description: 'Successful'
-  #servers:
-  #        - url: 'http://localhost:8080' 
